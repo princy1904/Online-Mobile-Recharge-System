@@ -1,0 +1,60 @@
+create database Mobile;
+use Mobile;
+CREATE TABLE `admin` (
+  `username` varchar(50) NOT NULL DEFAULT '',
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `admin` VALUES ('clemencia','1998');
+
+CREATE TABLE `offer` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `operator` varchar(50) DEFAULT NULL,
+  `state` varchar(50) DEFAULT NULL,
+  `amount` varchar(50) DEFAULT NULL,
+  `offerdetail` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+INSERT INTO `offer` VALUES (1,'airtel','karnataka','50','get talktime of Rs 100'),(5,'vodafone','tatadocomo','43','make your connection lifetime');
+
+CREATE TABLE `rechargedetail` (
+  `amount` varchar(50) DEFAULT NULL,
+  `operator` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `transid` varchar(50) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `rechargedetail` VALUES ('null','null','meena','36908350'),('34','reliance','meena','89904393'),('34','reliance','meena','37012051'),('23','reliance','meena','99501537'),('35','reliance','meena','23719975'),('20','reliance','meena','87122237'),('23','airtel','meeena','24345546'),('300','tatadocomo','meena','11950799'),('34','reliance','kush','10972525'),('558','airtel','meenu','5603046');
+
+CREATE TABLE `subscribe` (
+  `name` varchar(50) DEFAULT NULL,
+  `emailid` varchar(50) DEFAULT NULL,
+  `phoneno` varchar(50) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `subscribe` VALUES ('Nisha','lincy@gmail.com','9886579971'),('vincy','hello@gmail.com','1234567891'),('king','king12@gmail.com','7276763516');
+
+CREATE TABLE `transactiondetail` (
+  `transid` varchar(50) DEFAULT NULL,
+  `bank` varchar(50) DEFAULT NULL,
+  `acctype` varchar(50) DEFAULT NULL,
+  `accno` varchar(50) DEFAULT NULL,
+  `pin` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `transactiondetail` VALUES ('99501537','null','null','null','null','princy'),('23719975','Indianbank','savings','3232','323','princy'),('87122237','Indianbank','savings','2121212','22121','princy'),('24345546','Indianbank','savings','2323','2323','princy'),('11950799','Indianbank','savings','576567','543','princy'),('10972525','Indianbank','savings','2323','23','princy'),('5603046','Indianbank','savings','255869347','0014','lincy');
+CREATE TABLE `user` (
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phoneno` decimal(10,0) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `user` VALUES ('meha','rithu','ariyalur','meha@gmail.com',9886579971,'king','1234'),('Lincy','nisha','chennai','lincy@gmail.com',1234567891,'vishu','1234'),('papu','meenu','madurai','meesha3@gmail.com',7276763516,'meesha','suer@gmail.com');
+select*from admin;
+select*from offer;
+select*from rechargedetail;
+select*from subscribe;
+select*from transactiondetail;
+select*from user;
